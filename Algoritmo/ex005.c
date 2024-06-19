@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#define PRODUTOS 15
+#define PRODUTOS 3
 
 int main()
 {
@@ -13,8 +13,10 @@ int main()
         scanf("%d", &preco[i]);
         printf("Digite o codigo do produto %d: ", i);
         scanf("%d", &codigo[i]);
-        comp = preco[1];
-        comp_codigo = codigo[1];
+        if (preco[1] == preco[i]){
+            comp = preco[1];
+            comp_codigo = codigo[1];
+        }
         if (preco[i] > comp)
         {
             comp = preco[i];
