@@ -6,7 +6,7 @@ int main ()
     int inicial = 1;
     while (inicial <= 10)
     {
-        printf("\n%d", inicial);
+        printf("%d\n", inicial);
         inicial++;
     }
 }
