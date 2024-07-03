@@ -32,23 +32,23 @@ float mediaTemp(float total)
     return media;
 }
 
-/*void numDias(int temperatura, int i, float total)
+void numDias(int temperatura, int i, float total, int num)
 {
     if (temperatura >= mediaTemp(total))
     {
-        int num = 0;
         num++;
     }
     if (i == DIAS)
     {
-        printf("O numero de dias que ficaram acima da media foram: %d", num);
+        printf("\nO numero de dias que ficaram acima da media foram: %d", num);
     }
-} */
+} 
 
 int main()
 {
     int temp[DIAS], indice;
     float total = 0;
+    int num = 0;
     for (int i = 1; i <= DIAS; i++)
     {
         printf("Digite a temperatura no dia %d: ", i);
@@ -65,6 +65,6 @@ int main()
             float media = mediaTemp(total);
             printf("\nA media das temperaturas foi: %0.2f", media);
         }
-        // numDias(temp[i], i, total);
+        numDias(temp[i], i, total, num);
     }
 }

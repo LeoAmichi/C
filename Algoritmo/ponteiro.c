@@ -4,22 +4,28 @@
 
 int main(void)
 {
-
+	int var = 15;
 	int *ptr;
-	int **pptr;
 
-	int valor;
+	ptr = &var;
+	display(var, ptr);
+	*ptr = 73;
+	display(var, ptr);
 
-	ptr = &valor;
-	pptr = &ptr;
-
-	scanf("%d", ptr);
-
-	printf("\nEndereco de ptr = %x", &ptr);
-	printf("\nEndereco de pptr = %x", &pptr);
-
-	printf("\nValor ptr = %d", *ptr);
-	printf("\nValor pptr = %d", **pptr);
-
-	return EXIT_SUCCESS;
+	return 0;
 }
+
+void display(int var, int *ptr)
+{
+	printf("\n\n");
+	printf("conteudo de var = %d\n", var);
+	printf("endereco de var = %p\n", &var);
+	printf("conteudo apontado por ptr = %d\n", *ptr);
+	printf("endereco apontado por ptr = %p\n", ptr);
+	printf("endereco do ptr           = %p\n", &ptr);
+}
+
+// Ponteiros:
+// *ptr : o apontado por, conteúdo do enredeço da variável que o ptr aponta
+// ptr : o endereço da variável
+// &ptr : o endereço do ponteiro
