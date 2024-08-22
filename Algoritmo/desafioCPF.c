@@ -21,7 +21,7 @@ int main()
     digito9 = cpf[1] * 10;
 
     int total = digito1 + digito2 + digito3 + digito4 + digito5 + digito6 + digito7 + digito8 + digito9;
-
+    printf("\n%d", digito4);
     if (total % 11 == 1 || total % 11 == 0)
     {
         cpf[10] = 0;
@@ -33,6 +33,7 @@ int main()
     }
 
     int digito10 = cpf[10] * 2;
+    
     digito1 = cpf[9] * 3;
     digito2 = cpf[8] * 4;
     digito3 = cpf[7] * 5;
