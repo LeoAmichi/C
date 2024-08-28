@@ -12,7 +12,7 @@ void Design(char layout[3][3])
     printf("----|---|----\n");
 }
 
-void Jogador1(char layout[3][3], int numero)
+int Jogador1(char layout[3][3], int numero, int i)
 {
 
     switch (numero)
@@ -20,155 +20,195 @@ void Jogador1(char layout[3][3], int numero)
     case 1:
         if (layout[0][0] == 'X')
         {
-            printf("Jogada Invalida");
-            break;
+            i--;
         }
-        layout[0][0] = 'O';
+        else
+        {
+            layout[0][0] = 'O';
+        }
         break;
     case 2:
         if (layout[0][1] == 'X')
         {
-            printf("Jogada Invalida");
-            break;
+            i--;
         }
-        layout[0][1] = 'O';
+        else
+        {
+            layout[0][1] = 'O';
+        }
         break;
     case 3:
         if (layout[0][2] == 'X')
         {
-            printf("Jogada Invalida");
-            break;
+            i--;
         }
-        layout[0][2] = 'O';
+        else
+        {
+            layout[0][2] = 'O';
+        }
         break;
     case 4:
         if (layout[1][0] == 'X')
         {
-            printf("Jogada Invalida");
-            break;
+            i--;
         }
-        layout[1][0] = 'O';
+        else
+        {
+            layout[1][0] = 'O';
+        }
         break;
     case 5:
         if (layout[1][1] == 'X')
         {
-            printf("Jogada Invalida");
-            break;
+            i--;
         }
-        layout[1][1] = 'O';
+        else
+        {
+            layout[1][1] = 'O';
+        }
         break;
     case 6:
         if (layout[1][2] == 'X')
         {
-            printf("Jogada Invalida");
-            break;
+            i--;
         }
-        layout[1][2] = 'O';
+        else
+        {
+            layout[1][2] = 'O';
+        }
         break;
     case 7:
         if (layout[2][0] == 'X')
         {
-            printf("Jogada Invalida");
-            break;
+            i--;
         }
-        layout[2][0] = 'O';
+        else
+        {
+            layout[2][0] = 'O';
+        }
         break;
     case 8:
         if (layout[2][1] == 'X')
         {
-            printf("Jogada Invalida");
-            break;
+            i--;
         }
-        layout[2][1] = 'O';
+        else
+        {
+            layout[2][1] = 'O';
+        }
         break;
     case 9:
         if (layout[2][2] == 'X')
         {
-            printf("Jogada Invalida");
-            break;
+            i--;
         }
-        layout[2][2] = 'O';
+        else
+        {
+            layout[2][2] = 'O';
+        }
         break;
     }
+    i++;
+    return i;
 }
 
-void Jogador2(char layout[3][3], int numero)
+int Jogador2(char layout[3][3], int numero, int i)
 {
     switch (numero)
     {
     case 1:
         if (layout[0][0] == 'O')
         {
-            printf("Jogada Invalida");
-            break;
+            i--;
         }
-        layout[0][0] = 'X';
+        else
+        {
+            layout[0][0] = 'X';
+        }
         break;
     case 2:
         if (layout[0][1] == 'O')
         {
-            printf("Jogada Invalida");
-            break;
+            i--;
         }
-        layout[0][1] = 'X';
+        else
+        {
+            layout[0][1] = 'X';
+        }
         break;
     case 3:
         if (layout[0][2] == 'O')
         {
-            printf("Jogada Invalida");
-            break;
+            i--;
         }
-        layout[0][2] = 'X';
+        else
+        {
+            layout[0][2] = 'X';
+        }
         break;
     case 4:
         if (layout[1][0] == 'O')
         {
-            printf("Jogada Invalida");
-            break;
+            i--;
         }
-        layout[1][0] = 'X';
+        else
+        {
+            layout[1][0] = 'X';
+        }
         break;
     case 5:
         if (layout[1][1] == 'O')
         {
-            printf("Jogada Invalida");
-            break;
+            i--;
         }
-        layout[1][1] = 'X';
+        else
+        {
+            layout[1][1] = 'X';
+        }
         break;
     case 6:
         if (layout[1][2] == 'O')
         {
-            printf("Jogada Invalida");
-            break;
+            i--;
         }
-        layout[1][2] = 'X';
+        else
+        {
+            layout[1][2] = 'X';
+        }
         break;
     case 7:
         if (layout[2][0] == 'O')
         {
-            printf("Jogada Invalida");
-            break;
+            i--;
         }
-        layout[2][0] = 'X';
+        else
+        {
+            layout[2][0] = 'X';
+        }
         break;
     case 8:
         if (layout[2][1] == 'O')
         {
-            printf("Jogada Invalida");
-            break;
+            i--;
         }
-        layout[2][1] = 'X';
+        else
+        {
+            layout[2][1] = 'X';
+        }
         break;
     case 9:
         if (layout[2][2] == 'O')
         {
-            printf("Jogada Invalida");
-            break;
+            i--;
         }
-        layout[2][2] = 'X';
+        else
+        {
+            layout[2][2] = 'X';
+        }
         break;
     }
+    i++;
+    return i;
 }
 
 int vencedor(char layout[3][3])
@@ -218,61 +258,61 @@ int vencedor(char layout[3][3])
     return auxiliar;
 }
 
-void sobrescrever(char layout[3][3])
-{
-    for (int i = 0; i < 3; i++)
-    {
-        for (int j = 0; j < 3; j++)
-        {
-            if (layout[i][j] == 'X' || layout[i][j] == 'O')
-            {
-                printf("Escolha outra casa");
-            }
-        }
-    }
-}
 int main()
 {
     char layout[3][3] = {'1', '2', '3', '4', '5', '6', '7', '8', '9'};
     int numero;
-    int i = 1;
+    int i = 0;
 
     Design(layout);
 
-    while (i <= 8)
+    while (i < 9)
     {
 
-        printf("Escreva sua Jogada J1: ");
+        printf("Escreva sua jogada J1: ");
         scanf("%d", &numero);
-        Jogador1(layout, numero);
+
+        i = Jogador1(layout, numero, i);
+
+        system("cls");
+        Design(layout);
 
         if (vencedor(layout) == 1)
         {
-            printf("Jogador 1 Vencedor\n\n");
+            system("cls");
+            printf("\nJogador 1 Vencedor\n\n");
+            Design(layout);
+            break;
+        }
+
+        // Quem termina é o jogador 1 então quando i == 9 finaliza o loop principal
+        if (i == 9)
+        {
+            Design(layout);
+            break;
+        }
+
+        printf("Escreva sua jogada J2: ");
+        scanf("%d", &numero);
+
+        i = Jogador2(layout, numero, i);
+
+        if (vencedor(layout) == 1)
+        {
+            system("cls");
+            printf("\nJogador 2 Vencedor\n\n");
             Design(layout);
             break;
         }
 
         system("cls");
         Design(layout);
-        i++;
-
-        printf("Escreva sua Jogada J2: ");
-        scanf("%d", &numero);
-        Jogador2(layout, numero);
-
-        if (vencedor(layout) == 1)
-        {
-            printf("Jogador 2 Vencedor\n\n");
-            Design(layout);
-            break;
-        }
-        system("cls");
-        Design(layout);
-        i++;
     }
+    
     if (vencedor(layout) == 0)
     {
-        printf("Empate!");
+        system("cls");
+        printf(" Empate!\n\n");
+        Design(layout);
     }
 }
