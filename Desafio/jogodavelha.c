@@ -108,7 +108,6 @@ int Jogador1(char layout[3][3], int numero, int i)
         }
         break;
     }
-    i++;
     return i;
 }
 
@@ -207,7 +206,6 @@ int Jogador2(char layout[3][3], int numero, int i)
         }
         break;
     }
-    i++;
     return i;
 }
 
@@ -273,6 +271,7 @@ int main()
         scanf("%d", &numero);
 
         i = Jogador1(layout, numero, i);
+        i++;     
 
         system("cls");
         Design(layout);
@@ -295,7 +294,9 @@ int main()
         printf("Escreva sua jogada J2: ");
         scanf("%d", &numero);
 
+        
         i = Jogador2(layout, numero, i);
+        i++;
 
         if (vencedor(layout) == 1)
         {
