@@ -267,7 +267,7 @@ int main()
     while (i < 9)
     {
 
-        printf("Escreva sua jogada J1: ");
+        printf("Digite sua jogada J1: ");
         scanf("%d", &numero);
 
         i = Jogador1(layout, numero, i);
@@ -291,7 +291,7 @@ int main()
             break;
         }
 
-        printf("Escreva sua jogada J2: ");
+        printf("Digite sua jogada J2: ");
         scanf("%d", &numero);
 
         
