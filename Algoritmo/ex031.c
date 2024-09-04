@@ -22,6 +22,7 @@ int main(){
     for(int i = 0; i < ELEMENTOS; i++){
         for(int j = 0; j < ELEMENTOS - 1; j++){
             if(vetor[j] > vetor[j + 1]){
+                
                 int auxiliar = vetor[j];
                 vetor[j] = vetor[j + 1];
                 vetor[j + 1] = auxiliar;
