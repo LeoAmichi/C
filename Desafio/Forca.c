@@ -4,6 +4,47 @@
 #include <string.h>
 #include <stdbool.h>
 
+void boneco(int chances)
+{
+    printf("\n");
+    switch (chances)
+    {
+    case 1:
+        // Cabeça
+        printf(" O\n");
+        break;
+    case 2:
+        // Cabeça e tronco
+        printf(" O\n");
+        printf(" |\n");
+        break;
+    case 3:
+        // Cabeça, tronco e braços
+        printf(" O\n");
+        printf(" |\\\n");
+        break;
+    case 4:
+        // Cabeça, tronco, braços e pernas
+        printf("  O\n");
+        printf(" /|\\\n");
+        break;
+    case 5:
+        // Cabeça, tronco, braços, pernas e base
+        printf("  O\n");
+        printf(" /|\\\n");
+        printf(" / \n");
+        break;
+    case 6:
+        // Bonequinho completo
+        printf("  O\n");
+        printf(" /|\\\n");
+        printf(" / \\\n");
+        break;
+    default:
+        break;
+    }
+}
+
 int pontos(char *string, int chute)
 {
     int pontos = 0;
@@ -46,8 +87,8 @@ char *sortear(int random)
 int main()
 {
     srand(time(NULL));
-    char string[5][40], chute, progresso[5][40];
-    int random[5], i, count[5] = {0}, pontosRodada = 0, totalLetras = 0, letrasAcertadas = 0;
+    char string[5][40], chute, progresso[5][40], letras_usadas[26];
+    int random[5], i, count[5] = {0}, pontosRodada = 0, totalLetras = 0, letrasAcertadas = 0, chances = 0;
 
     // sortear um número inteiro para buscar no array de palavras
     for (i = 0; i < 5; i++)
@@ -96,31 +137,55 @@ int main()
 
     printf("\nBem-Vindo ao Jogo da Forca");
     printf("\nAqui abaixo estao as palavras ocultadas \n");
-    for(int i = 0; i < 5; i++)
+    for (int i = 0; i < 5; i++)
         layout(string[i], chute, progresso[i]);
 
+    int j = 0;
     while (true)
     {
         pontosRodada = 0;
-        printf("\nDigite a letra para tentar advinhar: ");
+        if (chances == 6)
+        {
+            system("cls");
+            for (int i = 0; i < 5; i++)
+            {
+                printf("%s\n", string[i]);
+            }
+            boneco(chances);
+            printf("\nDerrota");
+            break;
+        }
+
+        printf("\n\nDigite a letra para tentar advinhar: ");
         scanf(" %c", &chute);
         system("cls");
-        //imprimir o layout atualizado
+        // imprimir o layout atualizado
         for (int i = 0; i < 5; i++)
             layout(string[i], chute, progresso[i]);
 
         for (int i = 0; i < 5; i++)
             pontosRodada += pontos(string[i], chute);
-        
+
+        chances++;
+        if (pontosRodada > 0)
+            chances--;
+        boneco(chances);
+
         letrasAcertadas += pontosRodada;
-        printf("%d\n", letrasAcertadas);
-        printf("%d", totalLetras);
-        
-        if (letrasAcertadas == totalLetras){
-            printf("Você Venceu");
+
+        letras_usadas[j] = chute;
+        letras_usadas[j + 1] = '\0';
+        printf("\nLetras usadas: ");
+        for (int i = 0; letras_usadas[i] != '\0'; i++)
+            printf("%c ", letras_usadas[i]);
+
+        if (letrasAcertadas == totalLetras)
+        {
+            printf("\n\nVencedor");
             break;
         }
-           
+
+        j++;
     }
     return 0;
 }
