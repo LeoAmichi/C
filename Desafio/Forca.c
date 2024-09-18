@@ -65,7 +65,7 @@ void layout(char *string, char chute, char *progresso)
     {
         if (chute == string[i])
         {
-            progresso[i] = chute; // Atualiza com o chute correto
+            progresso[i] = chute;
         }
     }
 
@@ -112,6 +112,7 @@ int main()
     for (int i = 0; i < 5; i++)
         strcpy(string[i], sortear(random[i]));
 
+    //inicializando todos os caracteres da string progresso com - para ser oculto
     for (int i = 0; i < 5; i++)
     {
         int j = 0;
@@ -167,25 +168,34 @@ int main()
             pontosRodada += pontos(string[i], chute);
 
         chances++;
-        if (pontosRodada > 0)
-            chances--;
-        boneco(chances);
-
-        letrasAcertadas += pontosRodada;
-
+        
         letras_usadas[j] = chute;
         letras_usadas[j + 1] = '\0';
+
         printf("\nLetras usadas: ");
-        for (int i = 0; letras_usadas[i] != '\0'; i++)
+        for (int i = 0; letras_usadas[i] != '\0'; i++){
             printf("%c ", letras_usadas[i]);
+            for (int j = 0; j <= i; j++) { //Verificação de Repetição de letras já usadas
+                if (i > 0 && letras_usadas[i - j] == chute) {
+                pontosRodada = 0; 
+                break;
+            }
+        }
+    }
+        if (pontosRodada > 0)
+            chances--;
+
+        printf("\n");
+        boneco(chances);
+        letrasAcertadas += pontosRodada;
 
         if (letrasAcertadas == totalLetras)
         {
             printf("\n\nVencedor");
             break;
         }
-
         j++;
     }
     return 0;
 }
+
