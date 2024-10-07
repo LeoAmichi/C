@@ -1,16 +1,14 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void Crescente(int numero[5]){
-    int i = 0;
-    while(i <= 4){
-        for(int j = 0; j <= 4; j++){
-            if(numero[i] < numero[j + 1]){
-                
-            }
-        }
-    i++;
+int Crescente(int numero, int verificador){
+    
+    if(numero > verificador){
+        int aux = numero;
+        numero = verificador;
+        verificador = aux;
     }
+
 }
 
 int main(){
@@ -23,5 +21,8 @@ int main(){
     printf("O numero verificador: ");
     scanf("%d", &verificador);
     numero[4] = verificador;
-    Crescente(numero);
+    for(int i = 0; i < 4; i++){
+        numero[i] = Crescente(numero);
+    }
+    
 }

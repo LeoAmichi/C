@@ -135,7 +135,6 @@ int main()
         }
         totalLetras += count[i]++;
     }
-
     printf("\nBem-Vindo ao Jogo da Forca");
     printf("\nAqui abaixo estao as palavras ocultadas \n");
     for (int i = 0; i < 5; i++)
@@ -145,7 +144,8 @@ int main()
     while (true)
     {
         pontosRodada = 0;
-        if (chances == 6)
+
+        if (chances == 6) //Tela de Derrota
         {
             system("cls");
             for (int i = 0; i < 5; i++)
@@ -192,7 +192,7 @@ int main()
         boneco(chances);
         letrasAcertadas += pontosRodada;
 
-        if (letrasAcertadas == totalLetras)
+        if (letrasAcertadas == totalLetras) //Tela de Vitória
         {
             printf("\n\nVencedor");
             break;
