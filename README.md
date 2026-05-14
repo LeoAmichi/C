@@ -1,8 +1,8 @@
-# Introdução à Programação em C 🚀
+# Introdução à Programação em C
 
 Este repositório contém uma coleção de exercícios, algoritmos e projetos desenvolvidos durante a disciplina de **Introdução à Programação**. O objetivo deste material é consolidar os fundamentos da linguagem C, explorando desde conceitos básicos até estruturas de dados e lógica de programação avançada.
 
-## 📂 Estrutura do Repositório
+## Estrutura do Repositório
 
 O projeto está organizado com nomes descritivos para facilitar o estudo e a navegação:
 
@@ -18,13 +18,13 @@ O projeto está organizado com nomes descritivos para facilitar o estudo e a nav
     *   **Jogo da Velha**
     *   **Pokedex** (Simulação via Terminal)
 
-## 🛠️ Tecnologias Utilizadas
+## Tecnologias Utilizadas
 
 *   **Linguagem:** C
 *   **Compilador Recomendado:** GCC (GNU Compiler Collection)
 *   **Ambiente:** VS Code / Terminal Linux
 
-## 🚀 Como Executar
+## Como Executar
 
 Para compilar e rodar qualquer um dos programas, utilize o terminal:
 
