@@ -1,0 +1,11 @@
+# Compilados
+*.o
+*.out
+*.exe
+output/
+
+# VS Code
+.vscode/
+
+# Outros
+.DS_Store
